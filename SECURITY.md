@@ -50,7 +50,7 @@ To minimize security risks when using this project, users are encouraged to:
 
 - **Keep the project up-to-date**: Regularly check for new releases and updates.
 - **Use HTTPS**: When accessing any resources related to the Project, ensure you use HTTPS to avoid man-in-the-middle attacks.
-- **Report suspicious activities**: If you notice any unusual or suspicious behavior when using this Project, report it immediately to [your-email@example.com].
+- **Report suspicious activities**: If you notice any unusual or suspicious behavior when using this Project, report it immediately to email@nathaniel.world.
 - **Use strong passwords**: Ensure that any passwords or credentials used with this Project are complex and unique.
 
 ## 7. Security Hardening Recommendations
