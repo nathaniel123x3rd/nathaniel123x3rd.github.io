@@ -1,3 +1,9 @@
+<p align="center">
+<img src="https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg">
+<img src="https://raw.githubusercontent.com/Safouene1/support-palestine-banner/master/banner-support.svg">
+</p>
+
+
 # Nathaniel's Portfolio
 
 Welcome to my portfolio website! This site showcases my projects, experience, and research in web development and other areas. The portfolio is a static website hosted on GitHub Pages, built with HTML, CSS, and JavaScript.
