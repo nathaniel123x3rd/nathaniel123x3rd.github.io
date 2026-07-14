@@ -28,6 +28,7 @@ You can view the live version of my portfolio [here](https://nathaniel.world).
 - **Navigation Menu**: Easy access to different sections like Home, Experience, Projects, Research, and Education.
 - **Custom 404 Page**: A custom error page for a better user experience when encountering broken links.
 - **GitHub Workflow**: Automatically deploys updates to GitHub Pages using a static.yml workflow.
+- **VPN/Proxy Signal Banner**: Shows a warning banner when VPN/proxy/Tor/hosting indicators are detected by the configured IP intelligence provider.
 
 ## Getting Started
 
@@ -63,6 +64,51 @@ If you want to make changes or add new content:
 1. Open the project in your preferred code editor (e.g., VS Code).
 2. Modify the HTML, CSS, or JavaScript files in the `assets` folder to customize the website.
 3. To see your changes, open the `index.html` file in your browser again.
+
+## VPN/Proxy Detection Setup
+
+The site now includes `assets/js/vpnDetection.js`, which:
+- gets the visitor IP address,
+- calls an IP intelligence endpoint, and
+- shows a dismissible warning banner when VPN/proxy/Tor/hosting signals are detected.
+
+### Configure provider endpoint/key
+
+By default, the script uses `proxycheck.io` with no API key.  
+To use another provider (or set your own key), add a config object before loading `assets/js/vpnDetection.js`:
+
+```html
+<script>
+  window.VPN_DETECTION_CONFIG = {
+    providerName: "your-provider",
+    providerUrlTemplate: "https://example.com/check/{ip}?key={key}",
+    providerApiKey: "REPLACE_WITH_YOUR_KEY",
+    playAudioOnDetection: true
+  };
+</script>
+```
+
+Supported normalized indicators:
+- `vpn`
+- `proxy`
+- `tor`
+- `hosting`
+
+The warning appears when any of these evaluates to true.
+
+### Static-site key safety note
+
+Because this is a static GitHub Pages site, any API key used client-side can be exposed to visitors.  
+Safer alternatives:
+- Use a server-side proxy/function to call the intelligence API.
+- Restrict the key by domain, quota, and endpoint where your provider supports it.
+- Rotate keys regularly.
+
+### Reliability and privacy notes
+
+- IP intelligence checks are best-effort and can produce false positives/false negatives.
+- Visitors can bypass client-side checks.
+- Add a privacy disclosure noting that IP reputation/network checks may be sent to a third-party provider.
 
 ### Contributing
 
